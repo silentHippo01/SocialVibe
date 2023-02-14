@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmiddlecourse=self.webpackChunkmiddlecourse||[]).push([[543],{543:(e,u,s)=>{s.r(u),s.d(u,{default:()=>d});var c=s(893);const d=function(){return(0,c.jsx)("div",{children:"aboutpage"})}}}]);
