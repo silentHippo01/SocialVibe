@@ -1,6 +1,6 @@
 {
 	"sc": {
-		"scope": "tsx",
+		"scope": "typescript",
 		"prefix": "sc",
 		"body": [
 			"import { FC } from 'react';",

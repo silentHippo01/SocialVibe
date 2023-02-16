@@ -1,3 +1,4 @@
+import React from 'react';
 import { FC, useState } from 'react';
 import { Button } from './../../../../shared/ui/Button/Button';
 import { classNames } from './../../../../shared/lib/classNames/classNames';
@@ -18,10 +19,14 @@ export const SideBar: FC<SideBarProps> = ({ className }) => {
 
     return (
         <div 
+            data-testid='sidebar'
             className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}
         >
         
-        <Button onClick={onToggle}>
+        <Button 
+            data-testid="sidebar-toggle" 
+            onClick={onToggle}
+        >
             Toggle
         </Button>
 
