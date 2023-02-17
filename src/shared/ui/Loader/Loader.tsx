@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from './PageLoader.module.scss';
+import cls from './Loader.module.scss';
 
-interface PageLoaderProps {
+interface LoaderProps {
     className?: string;
 }
 
-export const PageLoader:FC<PageLoaderProps> = ({ className }) => {
+export const Loader:FC<LoaderProps> = ({ className }) => {
     return (
         <div className={classNames(cls.Loader, {}, [className])}>
             <div className="lds-roller">
