@@ -1,4 +1,6 @@
+import { DeepPartial } from "@reduxjs/toolkit";
 import { render } from "@testing-library/react";
+import { StateSchema, StoreProvider } from "app/providers/StoreProvider";
 import React from "react";
 import { ReactNode } from "react";
 import { I18nextProvider } from "react-i18next";
@@ -6,20 +8,25 @@ import { MemoryRouter } from "react-router-dom";
 import i18nForTests from "../../../config/i18n/i18nForTests";
 
 export interface componentRenderOptions {
-    route?: string;
+  route?: string;
+  initialState?: DeepPartial<StateSchema>;
 }
 
 export function componentRender(component: ReactNode, options: componentRenderOptions = {}) {
-    const {
-        route = '/'
-    } = options;
-    return render(
+  const {
+    route = '/',
+    initialState,
+  } = options;
+  return render(
+    <StoreProvider initialState={initialState}>
       <MemoryRouter initialEntries={[route]}>
         <I18nextProvider i18n={i18nForTests}>
-            {component}
+          {component}
         </I18nextProvider>
       </MemoryRouter>
-    )
+    </StoreProvider>
+
+  )
 }
 
 //было два файла renderWithRouter и renderWithTranslation стал один
