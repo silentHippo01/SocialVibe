@@ -11,10 +11,10 @@
     color: var(--primary-color);
 }
 
-.Modal.dark {
-    --bg-color: #1a1a6e;
-    --primary-color: #049604;
-}
+// .Modal.dark {
+//     --bg-color: #1a1a6e;
+//     --primary-color: #049604;
+// }
 
 .overlay{
     height: 100%;
@@ -28,7 +28,7 @@
 .content{
     padding: 20px;
     border-radius: 12px;
-    background: #e0dcdc;
+    background: var(--inverted-secondary-color);
 
     transform: scale(0.5);
     transition: 0.3s transform;
