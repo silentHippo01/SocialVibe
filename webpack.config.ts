@@ -1,6 +1,6 @@
 import { BuildPaths, BuildEnv } from './config/build/types/config';
 import path from 'path';
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 
 
@@ -25,6 +25,10 @@ export default (env: BuildEnv) => {
         port: PORT,
     });
     
+    config.plugins?.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
+
     return config
 };
 

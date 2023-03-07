@@ -16,4 +16,4 @@ export const parameters = {
 
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT)); //этот декоратор можно подключать не глобально, а к конкретной сторис
-addDecorator(RouterDecorator)
+addDecorator(RouterDecorator);
