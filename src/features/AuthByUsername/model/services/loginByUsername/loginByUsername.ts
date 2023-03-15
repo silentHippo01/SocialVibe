@@ -36,7 +36,6 @@ export const loginByUsername = createAsyncThunk<User, loginByUsernameProps>(
             console.log(e);
             return thunkAPI.rejectWithValue('error');
         }
-        
     }
 );
 
