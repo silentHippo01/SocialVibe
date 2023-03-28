@@ -1,10 +1,8 @@
-import { FC, useCallback, useState } from 'react';
-import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { FC, memo, useCallback, useState } from 'react';
 import cls from "./NavBar.module.scss";
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
-import Modal from 'shared/ui/Modal/Modal';
 import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,7 +11,7 @@ interface NavBarProps {
     className?: string;
 }
 
-export const NavBar: FC<NavBarProps> = ({ className }) => {
+export const NavBar: FC<NavBarProps> = memo(({ className }) => {
 
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -66,4 +64,4 @@ export const NavBar: FC<NavBarProps> = ({ className }) => {
 
         </div>
     );
-};
+});

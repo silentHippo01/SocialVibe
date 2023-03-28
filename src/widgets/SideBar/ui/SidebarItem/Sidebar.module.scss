@@ -1,0 +1,30 @@
+.items{
+    margin-top: 20px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.link{
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.icon {
+    fill: var(--inverted-primary-color);
+    margin-right: 15px;
+}
+
+.collapsed{
+    .link{
+        width: 0;
+        opacity: 0;
+        transition: 0.2s opacity;
+    }
+}

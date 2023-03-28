@@ -13,7 +13,7 @@ type ReducersListEntry = [StateSchemaKey, Reducer];
 
 interface DynamicModuleLoaderProps {
     reducers: ReducersList;
-    removeAfterUnmount?: boolean; // на случай если не нужно будте удалять редьюсер после размонтирования компонента
+    removeAfterUnmount?: boolean; // на случай если не нужно будет удалять редьюсер после размонтирования компонента
     children: ReactNode;
 }
 

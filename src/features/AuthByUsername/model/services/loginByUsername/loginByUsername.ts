@@ -9,6 +9,7 @@ interface loginByUsernameProps {
 }
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
+//loginByUserName - создает асинхронный thunk
 
 enum LoginErrors {
     INCORRECT_DATA = '',
