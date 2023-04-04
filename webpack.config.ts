@@ -3,8 +3,6 @@ import path from 'path';
 import webpack, { DefinePlugin } from 'webpack';
 import { buildWebpackConfig } from './config/build/buildWebpackConfig';
 
-
-
 export default (env: BuildEnv) => {
     const paths: BuildPaths = {
         entry: path.resolve(__dirname, 'src', 'index.tsx'),
@@ -17,12 +15,14 @@ export default (env: BuildEnv) => {
     const PORT = env.port || 3000;
 
     const isDev = mode === 'development';
+    const apiUrl = env.apiUrl || 'http://localhost:8000';
 
     const config: webpack.Configuration = buildWebpackConfig({
         mode,
         paths,
         isDev,
         port: PORT,
+        apiUrl,
     });
     
     config.plugins?.push(new DefinePlugin({

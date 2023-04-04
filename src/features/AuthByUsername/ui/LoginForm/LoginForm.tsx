@@ -18,7 +18,7 @@ import { DynamicModuleLoader, ReducersList } from "shared/lib/components/Dynamic
 
 export interface LoginFormProps {
     className?: string;
-    onSuccess?: () => void;
+    onSuccess: () => void;
 }
 
 const initialReducers: ReducersList = {
@@ -50,7 +50,7 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
     }, [onSuccess, dispatch, username, password])
 
     return (
-        <DynamicModuleLoader reducers={initialReducers}>
+        <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
            <Text title={t('Форма авторизации')}/>
            {error && <Text text={i18n.t(error)} theme={TextTheme.ERROR}/>}

@@ -1,5 +1,5 @@
 import {useContext} from 'react';
-import { ThemeContext, Theme, LOCAL_STORAGE_THEME_KEY } from './ThemeContext';
+import { ThemeContext, Theme, LOCAL_STORAGE_THEME_KEY, ThemeContextProps } from './ThemeContext';
 
 
 interface UseThemeResult {
@@ -13,16 +13,19 @@ export function useTheme(): UseThemeResult{
     
     const toggleTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK
-        setTheme(newTheme);
+        setTheme?.(newTheme);
         document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     }
 
     return {
-        theme,
+        theme: theme || Theme.LIGHT,
         toggleTheme
     }
 }
 
 
 //кастомный хук
+
+// была ошибка setTheme(newTheme) - Cannot invoke an object which is possibly 'undefined'.
+// исправлена setTheme?.(newTheme)

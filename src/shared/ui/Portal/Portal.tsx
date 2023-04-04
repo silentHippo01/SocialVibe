@@ -6,7 +6,7 @@ interface PortalProps{
     element?: HTMLElement;
 }
 
-const Portal:FC<PortalProps> = (props) => {
+export const Portal = (props: PortalProps) => {
     const {
         children, 
         element = document.body,
@@ -14,5 +14,3 @@ const Portal:FC<PortalProps> = (props) => {
 
     return createPortal(children, element);
 };
-
-export default Portal;
