@@ -19,6 +19,8 @@ const StoreProvider: FC<StoreProvider> = (props) => {
         asyncReducers,
     } = props;
 
+    console.log('провайдер:' + asyncReducers );
+
     const navigate = useNavigate();
 
     const store = createReduxStore(

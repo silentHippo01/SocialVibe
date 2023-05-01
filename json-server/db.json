@@ -1,41 +1,38 @@
 {
-    "posts": [
-      { 
-        "id": "1", 
-        "title": "json-server", 
-        "author": "typicode" 
-      },
-      { 
-        "id": "2", 
-        "title": "json-server", 
-        "author": "typicode" 
-      }
-    ],
-    "comments": [
-      { 
-        "id":"1", 
-        "body": "some comment", 
-        "postId": "1" 
-      }
-    ],
-
-    "users": [
-      {
-        "id": "1",
-        "username": "admin",
-        "password": "123"
-      }
-    ],
-
-    "profile": 
-    { 
-        "first": "Andrew",
-        "lastname": "Novikov",
-        "age": 21,
-        "currency": "RUB",
-        "country": "Russia",
-        "city": "Moscow",
-        "username": "admin",
-        "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server",
+      "author": "typicode"
     }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123"
+    }
+  ],
+  "profile": {
+    "first": "Andrew",
+    "lastname": "Novikov",
+    "age": 21,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Chicago",
+    "username": "admin",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
   }
+}

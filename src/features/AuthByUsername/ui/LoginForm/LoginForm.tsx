@@ -61,14 +61,14 @@ const LoginForm: FC<LoginFormProps> = memo(({ className, onSuccess }) => {
                 autoFocus
                 onChange={onChangeUsername}
                 value={username}
-                />
+            />
            <Input 
                 type="text" 
                 className={classNames(cls.input, {}, [])}
                 placeholder={t('Введите пароль')}
                 onChange={onChangePassword}
                 value={password}
-                />
+            />
            <Button
                 theme={ButtonTheme.OUTLINE} 
                 className={classNames(cls.loginBtn)}

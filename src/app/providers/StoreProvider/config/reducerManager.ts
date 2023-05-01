@@ -9,16 +9,17 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
   
     return {
       getReducerMap: () => reducers,
+      //reduce - по сути обычный корневой редьюсер
       reduce: (state: StateSchema, action: AnyAction) => {
         if (keysToRemove.length > 0) {
-          state = { ...state }
+          state = { ...state } // создает копию состояния
           keysToRemove.forEach((key) => {
-            delete state[key];
+            delete state[key]; //удаляет лишнии редьюсеры
           })
           keysToRemove = []
         }
   
-        return combinedReducer(state, action)
+        return combinedReducer(state, action) //возвращает новый редьюсер
       },
   
       add: (key: StateSchemaKey, reducer: Reducer) => {
@@ -37,7 +38,7 @@ export function createReducerManager(initialReducers: ReducersMapObject<StateSch
         }
   
         delete reducers[key]
-  
+
         keysToRemove.push(key)
   
         combinedReducer = combineReducers(reducers)

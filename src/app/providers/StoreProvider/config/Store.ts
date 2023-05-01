@@ -2,7 +2,6 @@ import { counterReducer } from 'entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
 import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
 import { userReducer } from 'entities/User';
-import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';

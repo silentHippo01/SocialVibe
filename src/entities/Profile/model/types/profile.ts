@@ -1,17 +1,20 @@
-import { Country, Currency } from "shared/const/common";
+import { Country } from "entities/Country/model/types/Country";
+import { Currency } from "entities/Currency/model/types/Currency";
 
 export interface Profile {
-    first: string;
-    lastname: string;
-    age: number;
-    currency: Currency;
-    country: Country;
-    username: string;
-    avatar: string;
+    first?: string;
+    lastname?: string;
+    age?: number;
+    currency?: Currency;
+    country?: Country;
+    username?: string;
+    avatar?: string;
+    city?: string;
 }
 
 export interface ProfileSchema {
     data?: Profile;
+    form?: Profile;
     isLoading: boolean;
     error?: string;
     readOnly: boolean;
