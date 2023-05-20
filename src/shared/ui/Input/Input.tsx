@@ -23,7 +23,7 @@ export const Input: FC<InputProps> = memo((props) => {
         type = 'text',
         placeholder,
         autofocus,
-        readonly = true,
+        readonly,
         ...otherProps
     } = props;
 
