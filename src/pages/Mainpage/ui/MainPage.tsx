@@ -13,7 +13,7 @@ const MainPage = () => {
   }
 
   return (
-      <div>
+      <div style={{ color: 'red' }}>
           {t('Главная страница')}
           <Input value={value} onChange={onChange} placeholder="placeholder"/>
       </div>
