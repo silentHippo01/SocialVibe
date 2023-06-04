@@ -13,7 +13,7 @@ import { CountrySelect } from "entities/Country";
 interface ProfileCardProps {
     className?: string;
     data?: Profile;
-    isLoading?: boolean;
+    isLoading?: boolean; 
     error?: string;
     readonly?: boolean;
     onChangeFirstName?: (value?: string) => void;
