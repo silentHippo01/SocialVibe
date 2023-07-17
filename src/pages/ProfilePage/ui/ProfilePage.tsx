@@ -8,7 +8,7 @@ import { getProfileForm } from "entities/Profile";
 import { Currency } from "entities/Currency/model/types/Currency";
 import { Country } from "entities/Country";
 import { TextTheme } from "shared/ui/Text/Text";
-import Text from "shared/ui/Text/Text";
+import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
 

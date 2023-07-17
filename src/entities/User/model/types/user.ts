@@ -1,6 +1,7 @@
 export interface User {
     id: string;
     username: string;
+    avatar?: string;
 }
 
 //пароля нет, тк его не хранят на фронте 

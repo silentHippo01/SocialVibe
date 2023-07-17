@@ -21,7 +21,7 @@ const Avatar = ({className, src, size, alt}: AvatarProps) => {
        <img 
             src={src} 
             alt={alt}
-            style={{}}
+            style={styles}
             className={classNames(cls.Avatar, mods, [className])}
         />
     );

@@ -1,7 +1,7 @@
 import { Mods, classNames } from "shared/lib/classNames/classNames";
 import cls from './ProfileCard.module.scss'
 import { useTranslation } from "react-i18next";
-import Text, { TextAlign, TextTheme } from "shared/ui/Text/Text";
+import { TextAlign, TextTheme, Text } from "shared/ui/Text/Text";
 import { Input } from "shared/ui/Input/Input";
 import { Profile } from "../../model/types/profile";
 import { Loader } from "shared/ui/Loader/Loader";

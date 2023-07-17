@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
-import Text, { TextTheme } from "shared/ui/Text/Text";
+import { TextTheme, Text } from "shared/ui/Text/Text";
 import i18n from "shared/config/i18n/i18n";
 import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLoginUsername";
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
