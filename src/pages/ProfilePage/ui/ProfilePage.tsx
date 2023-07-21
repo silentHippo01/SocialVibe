@@ -11,6 +11,8 @@ import { TextTheme } from "shared/ui/Text/Text";
 import { Text } from "shared/ui/Text/Text";
 import { useTranslation } from "react-i18next";
 import { ValidateProfileError } from "entities/Profile/model/types/profile";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useParams } from "react-router-dom";
 
 const reducers: ReducersList = {
     profile: profileReducer,
@@ -33,6 +35,7 @@ const ProfilePage = (props: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadOnly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Ошибка сервера при сохранении'),
@@ -42,11 +45,11 @@ const ProfilePage = (props: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_USER_DATA]: t('Некорректные данные пользователя'),
     }
     
-    useEffect(() => {
-        if(__PROJECT__ !== 'storybook'){
-            dispatch(fetchProfileData());
-        }
-    }, [dispatch])
+    useInitialEffect(() => {
+    if (id) { 
+        dispatch(fetchProfileData(id));
+    }
+    })
 
     const onChangeFirstName = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({first: value || ''}))

@@ -5,13 +5,13 @@ import { Profile } from "../../types/profile";
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, string, ThunkConfig<string>>(
     'profile/fetchProfileData',
-    async (_, thunkAPI) => {
+    async (profileID, thunkAPI) => {
         const {extra, rejectWithValue} = thunkAPI;
 
         try {
-            const response = await extra.api.get<Profile>('/profile');
+            const response = await extra.api.get<Profile>(`/profile/${profileID}`);
 
             if(!response.data){
                 throw new Error();

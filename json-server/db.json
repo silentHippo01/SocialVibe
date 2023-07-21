@@ -24,7 +24,7 @@
       ],
       "blocks": [
         {
-          "id": "1", 
+          "id": "1",
           "type": "TEXT",
           "title": "Заголовок этого блока",
           "paragraphs": [
@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": 1,
+      "userId": "1",
+      "text": "7u7u7u7u7u",
+      "id": "xv1zMSG"
+    },
+    {
+      "articleId": 1,
+      "userId": "2",
+      "text": "loolloollo",
+      "id": "yXwSXcS"
+    },
+    {
+      "articleId": 1,
+      "userId": "2",
+      "text": "hnhnjjnjn",
+      "id": "ZMP5IMd"
     }
   ],
   "users": [
@@ -120,14 +138,28 @@
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
     }
   ],
-  "profile": {
-    "first": "Andrew",
-    "lastname": "Novikov",
-    "age": 21,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Chicago",
-    "username": "admin",
-    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Andrew",
+      "lastname": "Novikov",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Chicago",
+      "username": "admin",
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
+    },
+    {
+      "id": "2",
+      "first": "Peper",
+      "lastname": "Gatsby",
+      "age": 31,
+      "currency": "USD",
+      "country": "Russia",
+      "city": "New York",
+      "username": "Pepe2007",
+      "avatar": "https://avatars.dzeninfra.ru/get-zen_doc/9662506/pub_645bb7348391b40b7b00152b_645bb7e5167baa53a8deff6a/scale_1200"
+    }
+  ]
 }
