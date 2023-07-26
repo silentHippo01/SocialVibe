@@ -19,15 +19,15 @@ const StoreProvider: FC<StoreProvider> = (props) => {
         asyncReducers,
     } = props;
 
-    console.log('провайдер:' + asyncReducers );
-
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const store = createReduxStore(
         initialState as StateSchema, 
         asyncReducers as ReducersMapObject<StateSchema>,
-        navigate,
+        // navigate,
     );
+
+    console.log('RENDER')
 
     return (
         <Provider store={store}>

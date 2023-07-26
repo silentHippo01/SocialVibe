@@ -9,7 +9,7 @@ import { CommentList } from "entities/Comment";
 import { DynamicModuleLoader, ReducersList } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { articleDetailsCommentsReducer, getArticleComments } from "../../model/slices/articleDetailsCommentsSlice";
 import { useSelector } from "react-redux";
-import { getArticleCommentsError, getArticleCommentsIsLoading } from "../../model/selectors/comments";
+import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
