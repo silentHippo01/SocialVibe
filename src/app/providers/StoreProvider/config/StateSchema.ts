@@ -9,10 +9,12 @@ import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlesPage';
+import { scrollSaveSchema } from 'features/ScrollSave';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: scrollSaveSchema;
 
     //Async reducers
     loginForm?: LoginSchema;
