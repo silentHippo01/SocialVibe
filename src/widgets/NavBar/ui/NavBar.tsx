@@ -45,7 +45,7 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
     }
 
     return (
-        <div className={classNames(cls.navbar, {}, [className])}>
+        <header className={classNames(cls.navbar, {}, [className])}>
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
@@ -62,6 +62,6 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
              )
             }
 
-        </div>
+        </header>
     );
 });

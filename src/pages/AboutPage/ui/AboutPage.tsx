@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Page } from 'shared/ui/Page/Page';
 
 const AboutPage = () => {
   const { t, i18n } = useTranslation('about');
 
   return (
-      <div>
+      <Page>
           {t('О сайте')}
-      </div>
+      </Page>
   );
 };
 

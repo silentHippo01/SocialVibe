@@ -17,7 +17,7 @@ render(
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </StoreProvider>,
+        </StoreProvider>
     </BrowserRouter>,
     document.getElementById('root'),
 );

@@ -25,5 +25,5 @@
         "./config/jest/setupTests.ts",
         "./src/**/*.ts",
         "./src/**/*.tsx"
-, "src/pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId"      ]
+, "src/pages/ArticlesDetailsPage/model/services/fetchCommentsByArticleId", "src/pages/ArticlesPage/model/services/fetchArticleList"      ]
   }
