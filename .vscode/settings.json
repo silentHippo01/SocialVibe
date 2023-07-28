@@ -4,5 +4,49 @@
         "src/shared/config/i18n"
     ],
     "eslint.run": "onType",
-    "i18n-ally.keystyle": "nested"
+    "i18n-ally.keystyle": "nested",
+    "folderTemplates.structures": [
+        {
+            "name": "My Custom Template",
+            // "customVariables": [
+            //     "CustomVar",
+            //     "CustomVar2"
+            // ],
+            "omitParentDirectory": true,
+            "structure": [
+                {
+                    "fileName": "<FTName>.tsx",
+                    "template": "Typescript Functional Component"
+                },
+                // {
+                //     "fileName": "index.js",
+                //     "template": "IndexFile"
+                // },
+                // {
+                //     "fileName": "<CustomVar>",
+                //     "template": "EmptyDirectory"
+                // }
+            ]
+        }
+    ],
+    "folderTemplates.fileTemplates": {
+        "Typescript Functional Component": [
+            "import { useTranslation } from 'react-i18next';",
+            "import cls from './<FTName>.module.scss'",
+            "import { classNames } from 'shared/lib/classNames/classNames';",
+            "interface <FTName>Props {",
+            "   className: string;",
+            "}",
+            "export const <FTName> = (props) => {",
+            "   const { t } = useTranslation();",
+            "   const {",
+            "       className,",
+            "   } = props;",
+            "   return (",
+            "       <div className={classNames(cls.<FTName>, {}, [])}>",
+            "       </div>",
+            "   );",
+            "};",
+        ]
+    }
 }

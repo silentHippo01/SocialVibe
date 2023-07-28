@@ -36,3 +36,28 @@ export const Counter = () => {
     );
 };
 
+
+
+// import { useTranslation } from "react-i18next";
+// import cls from './.module.scss'
+// import { classNames } from "shared/lib/classNames/classNames";
+
+
+// interface Props {
+//     className: string;
+// }
+
+// export const  = (props) => {
+//     const {t} = useTranslation();
+
+//     const {
+//         className,
+//     } = props;
+
+//     return (
+//         <div className={classNames(cls., {}, [])}>
+            
+//         </div>
+//     );
+// };
+

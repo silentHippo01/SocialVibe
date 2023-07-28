@@ -1,3 +1,4 @@
+import { action } from '@storybook/addon-actions';
 import {
   EntityState,
   PayloadAction,
@@ -9,6 +10,8 @@ import { Article, ArticleView } from 'entities/Article';
 import { ArticlePageSchema } from '../types/ArticlePageSchema';
 import { fetchArticlesList } from '../services/fetchArticleList/fetchArticlesList';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { ArticleSortField, ArticleType } from 'entities/Article';
+import { SortOrder } from 'shared/types';
 
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -30,6 +33,11 @@ const ArticlesPageSlice = createSlice({
     page: 1,
     hasMore: true,
     _inited: false,
+    limit: 9,
+    sort: ArticleSortField.CREATED,
+    search: '',
+    order: 'asc',
+    type: ArticleType.ALL,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -38,6 +46,21 @@ const ArticlesPageSlice = createSlice({
     },
     setPage: (state, action: PayloadAction<number>) => {
       state.page = action.payload;
+    },
+
+    setSort: (state, action: PayloadAction<ArticleSortField>) => {
+      state.sort = action.payload;
+    },
+
+    setOrder: (state, action: PayloadAction<SortOrder>) => {
+      state.order = action.payload;
+    },
+
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
+    },
+    setType: (state, action: PayloadAction<ArticleType>) => {
+      state.type = action.payload;
     },
 
     initState: (state) => {
@@ -49,18 +72,30 @@ const ArticlesPageSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(fetchArticlesList.pending, (state) => {
+      .addCase(fetchArticlesList.pending, (state, action) => {
         state.isLoading = true;
         state.error = undefined;
+
+        if(action.meta.arg.replace){
+          articlesAdapter.removeAll(state);
+        }
       })
 
       .addCase(fetchArticlesList.fulfilled, (
         state,
-        action: PayloadAction<Article[]>
+        action,
       ) => {
         state.isLoading = false;
-        articlesAdapter.addMany(state, action.payload);
-        state.hasMore = action.payload.length > 0;
+        //возможно ли такое?
+        if(state.limit){
+          state.hasMore = action.payload.length >= state.limit;
+        }
+
+        if(action.meta.arg.replace){
+          articlesAdapter.setAll(state, action.payload);
+        } else {
+          articlesAdapter.addMany(state, action.payload); //новые данные добавляются в конец
+        }
       })
 
       .addCase(fetchArticlesList.rejected, (state, action) => {

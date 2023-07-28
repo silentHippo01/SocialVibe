@@ -41,8 +41,10 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema>{
     reducerManager: ReducerManager;
 }
 
+
 export interface ThunkExtraArg {
     api: AxiosInstance;
+    navigate?: (to: To, options?: NavigateOptions) => void,
 }
 
 //<T> - тип ошибки

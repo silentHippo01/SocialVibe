@@ -12,6 +12,8 @@ import { getArticlesPageError, getArticlesPageInited, getArticlesPageIsLoading, 
 import { Page } from "widgets/Page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
+import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
+import { useSearchParams } from "react-router-dom";
 
 
 export interface ArticlesPageProps {
@@ -26,22 +28,21 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const { classname } = props;
     const { t } = useTranslation();
     const dispatch = useAppDispatch();
+    let [searchParams, setSearchParams] = useSearchParams();
+    console.log(searchParams);
+
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlesPageIsLoading);
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
-    const inited = useSelector(getArticlesPageInited);
 
-    const onChangeView = useCallback((view: ArticleView) => {
-        dispatch(ArticlesPageActions.setView(view));
-    }, [dispatch]);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch])
 
     useInitialEffect(() => {
-       dispatch(initArticlesPage())
+       dispatch(initArticlesPage(searchParams))
     });
 
     return (
@@ -50,11 +51,12 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 className={classNames(cls.ArticlesPage, {}, [classname])}
                 onScrollEnd={onLoadNextPart}
             >
-                <ArticleViewSelector view={view} onViewClick={onChangeView} />
+                <ArticlesPageFilters />
                 <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
+                    className={cls.list}
                 />
             </Page>
         </DynamicModuleLoader>
