@@ -8,6 +8,13 @@ export const $api = axios.create({
     }
 })
 
+$api.interceptors.request.use((config) => {
+    if(config.headers){
+        config.headers.authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
+    }
+    return config;
+})
+
 // authorization принимает типы 'string | number | boolean'.
 // localStorage выдает 'string | null'
 // поэтому задаем доп пустую строку
