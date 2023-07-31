@@ -6,6 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
 import { getUserAuthData, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 interface NavBarProps {
     className?: string;
@@ -33,6 +36,18 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
     if (authData) {
         return (
             <div className={classNames(cls.navbar, {}, [className])}>
+                <Text 
+                    className={cls.appName} 
+                    title={t('SocialVibe')} 
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink 
+                    to={RoutePath.article_create}
+                    theme={AppLinkTheme.SECONDARY}
+                    className={cls.createBtn}
+                >
+                    {t('Создать статью')}
+                </AppLink>
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
                     className={cls.links}
