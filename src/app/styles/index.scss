@@ -1,21 +1,21 @@
-@import './reset.scss';
-@import './variables/globals.scss';
-@import './themes/dark.scss';
-@import './themes/normal.scss';
-@import './themes/green.scss';
+@import "./reset.scss";
+@import "./variables/globals.scss";
+@import "./themes/dark.scss";
+@import "./themes/normal.scss";
+@import "./themes/green.scss";
 
-body{
+body {
     font: var(--font-m);
     color: var(--primary-color);
 }
 
 .app,
-.app_modal{
+.app_modal {
     font: var(--font-m);
     color: var(--primary-color);
 }
 
-.app{
+.app {
     background: var(--bg-color);
     min-height: 100vh; //на всю высоту браузера
 }
@@ -24,6 +24,17 @@ body{
     display: flex;
 }
 
+*::-webkit-scrollbar {
+    width: 8px; /* ширина всей полосы прокрутки */
+    height: 8px;
+}
 
+*::-webkit-scrollbar-track {
+    background: var(--card-bg); /* цвет зоны отслеживания */
+}
 
-//это корневой файл со стилями
+*::-webkit-scrollbar-thumb {
+    background-color: var(--srollBar-bg); /* цвет бегунка */
+    border-radius: 20px; /* округлось бегунка */
+    border: 1px solid var(--scrollBar-border); /* отступ вокруг бегунка */
+}

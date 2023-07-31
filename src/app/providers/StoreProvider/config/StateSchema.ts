@@ -7,7 +7,7 @@ import { AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject } f
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'entities/Article';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticlesDetailsPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema, articleDetailsPageRecommendationsSchema } from 'pages/ArticlesDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { scrollSaveSchema } from 'features/ScrollSave';
 
@@ -20,9 +20,9 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlePageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema; //группирует два редьюсера
  }
 
 export type StateSchemaKey = keyof StateSchema;
