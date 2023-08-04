@@ -13,12 +13,14 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { HTMLAttributeAnchorTarget } from 'react';
+import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from 'shared/const/localStorage';
 
 interface ArticleListItemProps {
     className?: string;
     article: Article;
-    view: ArticleView;
+    view: ArticleView; 
     target?: HTMLAttributeAnchorTarget;
+    index?: number;
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
@@ -27,7 +29,8 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         className,
         article,
         view,
-        target
+        target,
+        index
     } = props;
 
     const [isHover, bindHover] = useHover();
@@ -40,6 +43,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     )
+
+    const handleButtonClick = () => {
+        sessionStorage.setItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_ID, JSON.stringify(index))
+    }
 
     if (view === ArticleView.BIG) {
         const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
@@ -62,7 +69,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                             to={RoutePath.article_details + article.id}
                             target={target}
                         >
-                            <Button theme={ButtonTheme.OUTLINE}>
+                            <Button 
+                                theme={ButtonTheme.OUTLINE}
+                                onClick={handleButtonClick}
+                            >
                                 {t('Читать далее...')}
                             </Button>
                         </AppLink>

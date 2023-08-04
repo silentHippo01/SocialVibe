@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { classNames } from './../../../shared/lib/classNames/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import './PageLoader.scss';
 
 interface PageLoaderProps {

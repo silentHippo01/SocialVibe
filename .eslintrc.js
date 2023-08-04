@@ -19,6 +19,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'i18next',
+    "custom-plugin-eslint-for-project"
   ],
   rules: {
     'react/jsx-indent': [2, 4],
@@ -57,6 +58,7 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
+    'custom-plugin-eslint-for-project/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,

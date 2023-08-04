@@ -35,18 +35,27 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const isLoading = useSelector(getArticlesPageIsLoading);
     const view = useSelector(getArticlesPageView);
     const error = useSelector(getArticlesPageError);
-
+    console.log(articles);
 
     const onLoadNextPart = useCallback(() => {
         dispatch(fetchNextArticlesPage());
     }, [dispatch])
 
     useInitialEffect(() => {
-       dispatch(initArticlesPage(searchParams))
+        dispatch(initArticlesPage(searchParams))
     });
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+            {/* <ArticlesPageFilters /> */}
+            {/* <ArticleList
+                isLoading={isLoading}
+                view={view}
+                articles={articles}
+                className={cls.list}
+                onLoadNextPart={onLoadNextPart}
+            /> */}
+
             <Page
                 className={classNames(cls.ArticlesPage, {}, [classname])}
                 onScrollEnd={onLoadNextPart}
