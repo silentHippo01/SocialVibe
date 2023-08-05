@@ -1,5 +1,4 @@
 import { classNames } from "shared/lib/classNames/classNames";
-import cls from './ProfilePageHeader.module.scss';
 import { t } from "i18next";
 import { useTranslation } from "react-i18next";
 import { Text } from "shared/ui/Text/Text";
@@ -10,6 +9,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useCallback } from "react";
 import { updateProfileData } from "entities/Profile/model/services/updateProfileData/updateProfileData";
 import { getUserAuthData } from "entities/User";
+import { HStack } from "shared/ui/Stack";
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -41,23 +41,21 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack justify={"between"} max className={classNames('', {}, [className])}>
             <Text title={t('Профиль')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <>
                     {
                         readOnly ?
                             <Button
-                                className={cls.editBtn}
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={onEdit}
                             >
                                 {t('Редактировать')}
                             </Button>
                             :
-                            <>
+                            <HStack gap='8'>
                                 <Button
-                                    className={cls.editBtn}
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}
                                 >
@@ -65,16 +63,15 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
                                 </Button>
 
                                 <Button
-                                    className={cls.editBtn}
                                     theme={ButtonTheme.OUTLINE}
                                     onClick={onSave}
                                 >
                                     {t('Сохранить')}
                                 </Button>
-                            </>
+                            </HStack>
                     }
-                </div>
+                </>
             )}
-        </div>
+        </HStack>
     );
 };

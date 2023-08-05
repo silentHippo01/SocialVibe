@@ -9,6 +9,7 @@ import Avatar from "shared/ui/Avatar/Avatar";
 import { Currency, CurrencySelect } from "entities/Currency";
 import { Country } from "entities/Country/model/types/Country";
 import { CountrySelect } from "entities/Country";
+import { HStack, VStack } from "shared/ui/Stack";
 
 interface ProfileCardProps {
     className?: string;
@@ -47,22 +48,22 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if(isLoading){
         return(
-            <div className={classNames(cls.ProfileCard, {[cls.loading]: true }, [className])}>
+            <HStack justify={"center"} max className={classNames(cls.ProfileCard, {[cls.loading]: true }, [className])}>
                 <Loader />
-            </div>
+            </HStack>
         )
     }
 
     if(error){
         return(
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack justify={"center"} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text 
                     theme={TextTheme.ERROR}
                     title={t('Произошла ошибка при попытке загрузить профиль')}
                     text={t('Попробуйте перезагрузить страницу')}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         )
     }
 
@@ -71,12 +72,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     }
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [])}>
-            <div className={cls.data}>
+        <VStack gap='8' max className={classNames(cls.ProfileCard, mods, [])}>
                 {data?.avatar && (
-                    <div className={cls.avatarWrapper}>
+                    <HStack justify={'center'} max >
                         <Avatar src={data?.avatar}/>
-                    </div>
+                    </HStack>
                 )}
                 <Input 
                     value={data?.first}
@@ -132,7 +132,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readonly={readonly}
                />
-            </div>
-        </div>
+            </VStack>
     );
 };
