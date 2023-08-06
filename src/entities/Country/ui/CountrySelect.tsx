@@ -4,6 +4,7 @@ import Select from 'shared/ui/Select/Select';
 import cls from './CountrySelect.module.scss';
 import { Country } from '../model/types/Country';
 import { t } from 'i18next';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
     className?: string;
@@ -35,12 +36,23 @@ export const CountrySelect = (props: CountrySelectProps) => {
     }, [onChange])
 
     return (
-        <Select className={classNames(cls.CurrencySelect, {}, [className])}
-            label={t('Укажите страну: ')}
-            options={options}
-            value={value}
+        // <Select className={classNames(cls.CurrencySelect, {}, [className])}
+        //     label={t('Укажите страну: ')}
+        //     options={options}
+        //     value={value}
+        //     onChange={onChangeHandler}
+        //     readonly={readonly}
+        // />
+
+        <ListBox 
             onChange={onChangeHandler}
+            items={options}
+            value={value}
             readonly={readonly}
+            defaultValue={t('Укажите страну')}
+            className={className}
+            direction={'top'}
+            label={t('Укажите страну')}
         />
     );
 };
