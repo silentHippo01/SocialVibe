@@ -43,7 +43,7 @@ export const CountrySelect = (props: CountrySelectProps) => {
             readonly={readonly}
             defaultValue={t('Укажите страну')}
             className={className}
-            direction={'top'}
+            direction={'top right'}
             label={t('Укажите страну')}
         />
     );
