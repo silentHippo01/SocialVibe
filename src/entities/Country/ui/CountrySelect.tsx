@@ -36,14 +36,6 @@ export const CountrySelect = (props: CountrySelectProps) => {
     }, [onChange])
 
     return (
-        // <Select className={classNames(cls.CurrencySelect, {}, [className])}
-        //     label={t('Укажите страну: ')}
-        //     options={options}
-        //     value={value}
-        //     onChange={onChangeHandler}
-        //     readonly={readonly}
-        // />
-
         <ListBox 
             onChange={onChangeHandler}
             items={options}
