@@ -1,5 +1,4 @@
 import { AddCommentFormSchema } from './../../../../features/addCommentForm/model/types/addCommentForm';
-import { ProfileSchema } from './../../../../entities/Profile/model/types/profile';
 import { LoginSchema } from 'features/AuthByUsername/model/types/LoginSchema';
 import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
@@ -10,11 +9,14 @@ import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema, ArticleDetailsPageSchema, articleDetailsPageRecommendationsSchema } from 'pages/ArticlesDetailsPage';
 import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { scrollSaveSchema } from 'features/ScrollSave';
+import { rktApi } from 'shared/api/rtkApi';
+import { ProfileSchema } from 'features/editableProfileCard/model/types/profileSchema';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scrollSave: scrollSaveSchema;
+    [rktApi.reducerPath]: ReturnType<typeof rktApi.reducer>
 
     //Async reducers
     loginForm?: LoginSchema;

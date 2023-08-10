@@ -37,7 +37,7 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
         plugins.push(new webpack.HotModuleReplacementPlugin());
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }),);
     }    
-    
+
     return plugins;
 }
 

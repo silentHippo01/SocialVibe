@@ -6,6 +6,7 @@ import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ScrollSaveReducer } from 'features/ScrollSave';
+import { rktApi } from 'shared/api/rtkApi';
 
 export function createReduxStore(
     initialState?: StateSchema, 
@@ -17,6 +18,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scrollSave: ScrollSaveReducer,
+        [rktApi.reducerPath]: rktApi.reducer,
         // loginForm: loginReducer,
     }
 
@@ -33,10 +35,8 @@ export function createReduxStore(
                     api: $api,
                 }
             }
-        })
+        }).concat(rktApi.middleware)
       })
-
-      store.replaceReducer
 
       // @ts-ignore
       store.reducerManager = reducerManager;
@@ -45,3 +45,6 @@ export function createReduxStore(
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']; 
+
+
+//      store.replaceReducer
