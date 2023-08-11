@@ -14,5 +14,6 @@
 
 // export const Normal = Template.bind({});
 // Normal.args = {
-   
+//     id: '1',
 // };
+// Normal.decorators = [StoreDecorator({})];

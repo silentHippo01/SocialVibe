@@ -29,7 +29,7 @@ const SidebarItem: FC<SidebarItemProps> = memo(({ item, collapsed }) => {
         >
 
             <item.Icon className={cls.icon} />
-            <span className={cls.link}>{item.text}</span>
+            <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
     );
 });

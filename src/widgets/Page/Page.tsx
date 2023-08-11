@@ -13,7 +13,7 @@ import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
 interface PageProps {
     className?: string;
     children: ReactNode;
-    onScrollEnd?: () => void
+    onScrollEnd?: () => void;
 }
 
 export const Page = memo((props: PageProps) => {
