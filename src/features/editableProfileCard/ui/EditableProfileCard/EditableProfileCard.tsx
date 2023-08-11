@@ -27,7 +27,7 @@ const reducers: ReducersList = {
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -97,13 +97,12 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                 className={classNames('', {}, [className])}
             >
             <EditableProfileCardHeader id={id}/>
-            {/* @ts-ignore */}
             {validateErrors?.length && validateErrors.map((err) => (
                     <Text
                         key={err}
                         theme={TextTheme.ERROR}
-                        //@ts-ignore
                         text={validateErrorTranslates[err]}
+                        data-testid={'EditableProfileCard.Error'}
                     />
                 ))}
                 <ProfileCard
