@@ -529,6 +529,12 @@
       "userId": "1",
       "text": "ttgtg",
       "id": "6ovP3_Y"
+    },
+    {
+      "articleId": "3",
+      "userId": "2",
+      "text": "tggtgtgt",
+      "id": "PsSqJc4"
     }
   ],
   "users": [
@@ -536,21 +542,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": ["ADMIN"],
+      "role": [
+        "ADMIN"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": ["USER"],
+      "role": [
+        "USER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "role": ["MANAGER"],
+      "role": [
+        "MANAGER"
+      ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
     }
   ],
