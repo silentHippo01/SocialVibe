@@ -15,7 +15,7 @@ const AppRouter = () => {
                 {route.element}
             </Suspense>
         )
-
+            
         return (
             <Route
                 key={route.path}

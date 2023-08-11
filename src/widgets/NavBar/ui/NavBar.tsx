@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUsername';
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, userActions } from 'entities/User';
 import { useDispatch, useSelector } from 'react-redux';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
@@ -21,6 +21,8 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const authData = useSelector(getUserAuthData);
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserAdmin);
     const dispatch = useDispatch();
 
     const onCloseModal = useCallback(() => {
@@ -35,25 +37,31 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
         dispatch(userActions.logout());
     }, [])
 
+    const isAdminPanelAvailable = isAdmin || isManager;
+
     if (authData) {
         return (
             <div className={classNames(cls.navbar, {}, [className])}>
-                <Text 
-                    className={cls.appName} 
-                    title={t('SocialVibe')} 
+                <Text
+                    className={cls.appName}
+                    title={t('SocialVibe')}
                     theme={TextTheme.INVERTED}
                 />
-                <AppLink 
+                <AppLink
                     to={RoutePath.article_create}
                     theme={AppLinkTheme.SECONDARY}
                     className={cls.createBtn}
                 >
                     {t('Создать статью')}
                 </AppLink>
-                <Dropdown 
+                <Dropdown
                     direction={'bottom left'}
                     className={cls.dropdown}
                     items={[
+                        ...(isAdminPanelAvailable ? [{
+                            content: t('Админка'),
+                            href: RoutePath.admin_panel,
+                        }] : []),
                         {
                             content: t('Профиль'),
                             href: RoutePath.profile + authData.id,
@@ -62,8 +70,8 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
                             content: t('Выйти'),
                             onClick: onLogout,
                         }
-                    ]} 
-                    trigger={<Avatar size={30} src={authData.avatar}/>}  
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
                 />
             </div>
         )
@@ -79,12 +87,12 @@ export const NavBar: FC<NavBarProps> = memo(({ className }) => {
                 {t('Войти')}
             </Button>
 
-            { isAuthModal && (
+            {isAuthModal && (
                 <LoginModal
                     isOpen={isAuthModal}
                     onClose={onCloseModal}
                 />
-             )
+            )
             }
 
         </header>
