@@ -35,7 +35,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     } = props;
 
     const [isHover, bindHover] = useHover();
-    const { t } = useTranslation();
+    const { t } = useTranslation('articlelist');
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
