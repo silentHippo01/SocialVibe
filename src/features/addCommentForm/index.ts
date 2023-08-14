@@ -1,6 +1,6 @@
 import { addCommentFormActions } from 'features/addCommentForm/model/slices/addCommentFormSlice';
 import { getAddCommentFormText } from './model/selectors/addCommentFormSelectors';
-import { AddCommentFormSchema } from './model/types/addCommentForm';
+import type { AddCommentFormSchema } from './model/types/addCommentForm';
 import { addCommentFormAsync } from './ui/AddCommentForm/AddCommentForm.async';
 
 export {

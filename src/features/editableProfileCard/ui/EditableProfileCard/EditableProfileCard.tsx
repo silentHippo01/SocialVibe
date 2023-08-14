@@ -16,7 +16,7 @@ import { getProfileError } from '../../model/selectors/getProfileError/getProfil
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { ValidateProfileError } from '../../model/types/profileSchema';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { VStack } from 'shared/ui/Stack';
 

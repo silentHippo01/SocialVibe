@@ -1,9 +1,8 @@
-// import React from 'react';
-// import { ComponentMeta, ComponentStory } from '@storybook/react';
+export {}
 
+// import { ComponentMeta, ComponentStory } from '@storybook/react';
 // import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 // import { Article } from 'entities/Article';
-// import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
 // import { ArticleDetails } from './ArticleDetails';
 
 // export default {
@@ -14,7 +13,7 @@
 //     },
 // } as ComponentMeta<typeof ArticleDetails>;
 
-// const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />;
+// const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails />;
 
 // const article = {
 //     id: "1",
@@ -116,3 +115,5 @@
 //         error: 'error',
 //     },
 // })];
+
+export {}

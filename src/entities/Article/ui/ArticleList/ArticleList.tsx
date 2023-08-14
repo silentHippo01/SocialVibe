@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -10,6 +10,7 @@ import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/Page';
+import { ArticleView } from 'entities/Article';
 
 interface ArticleListProps {
     className?: string;

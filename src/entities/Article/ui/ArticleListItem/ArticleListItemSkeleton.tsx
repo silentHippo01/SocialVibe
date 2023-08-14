@@ -1,4 +1,5 @@
-import { Article, ArticleBlockType, ArticleTextBlock, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
+import { Article, ArticleTextBlock,  } from '../../model/types/article';
 import cls from './ArticleListItem.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';

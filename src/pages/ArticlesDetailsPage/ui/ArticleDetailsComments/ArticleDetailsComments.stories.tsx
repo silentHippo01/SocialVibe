@@ -1,14 +1,14 @@
-// import React from 'react';
-// import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ArticleDetailsComments } from './ArticleDetailsComments';
+import { ComponentMeta } from '@storybook/react';
 
 
-// export default {
-//     title: 'features/ArticleRecommendations',
-//     component: ArticleRecommendations,
-//     argTypes: {
-//         backgroundColor: { control: 'color' },
-//     },
-// } as ComponentMeta<typeof ArticleRecommendations>;
+export default {
+    title: 'features/ArticleDetailsComments',
+    component: ArticleDetailsComments,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+} as ComponentMeta<typeof ArticleDetailsComments>;
 
 // const Template: ComponentStory<typeof ArticleRecommendations> = (args) => <ArticleRecommendations {...args} />;
 

@@ -3,7 +3,7 @@ import  ArticleDetailsPage from './ArticleDetailsPage';
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/consts';
 
 export default {
   title: 'pages/ArticleDetailsPage',

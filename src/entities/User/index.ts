@@ -4,10 +4,13 @@ export {
 } from './model/slice/userSlice';
 
 export { 
+    UserRole,
+} from './model/consts/consts';
+
+export type {
     User, 
     UserSchema,
-    UserRole,
-} from './model/types/user';
+} from './model/types/user'
 
 export {
     getUserAuthData

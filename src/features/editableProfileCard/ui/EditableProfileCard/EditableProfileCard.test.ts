@@ -1,3 +1,4 @@
+export {}
 // import { Profile } from 'entities/Profile';
 // import { Country } from './../../../../entities/Country/model/types/Country';
 // import { Currency } from './../../../../entities/Currency/model/types/Currency';

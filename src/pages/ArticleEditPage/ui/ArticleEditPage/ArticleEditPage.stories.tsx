@@ -1,15 +1,15 @@
-// import { ComponentStory, ComponentMeta } from '@storybook/react';
-// import { NotFoundPage } from './NotFoundPage';
-// import { Theme } from 'app/providers/ThemeProvider';
-// import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Theme } from 'app/providers/ThemeProvider';
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import ArticleEditPage from './ArticleEditPage';
 
-// export default {
-//   title: 'pages/NotFoundPage',
-//   component: NotFoundPage,
-//   argTypes: {
-//     backgroundColor: { control: 'color' },
-//   },
-// } as ComponentMeta<typeof NotFoundPage>;
+export default {
+  title: 'pages/ArticleEditPage',
+  component: ArticleEditPage,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+} as ComponentMeta<typeof ArticleEditPage>;
 
 // const Template: ComponentStory<typeof NotFoundPage> = (args) => <NotFoundPage />;
 

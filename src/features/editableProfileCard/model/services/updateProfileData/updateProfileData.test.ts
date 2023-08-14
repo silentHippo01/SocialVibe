@@ -2,7 +2,7 @@ import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk.ts/TestAsyncThun
 import { updateProfileData } from "./updateProfileData";
 import { Currency } from "entities/Currency/model/types/Currency";
 import { Country } from "entities/Country/model/types/Country";
-import { ValidateProfileError } from "../../types/profileSchema";
+import { ValidateProfileError } from "../../consts/consts";
 
 const data = {
     first: 'andrew',

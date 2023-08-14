@@ -14,11 +14,12 @@ import Avatar from "shared/ui/Avatar/Avatar";
 import EyeIcon from 'shared/assets/icon/ant-design_eye-outlined.svg';
 import ECalendarIcon from 'shared/assets/icon/clarity_date-line.svg'
 import { Icon } from "shared/ui/Icon/Icon";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleBlock } from "../../model/types/article";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleICodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { HStack, VStack } from "shared/ui/Stack";
+import { ArticleBlockType } from "../../model/consts/consts";
 
 interface ArticleDetailsProps {
     className?: string;
