@@ -14,6 +14,6 @@ export type {
     ArticleDetailsPageSchema
 } from "./model/types/index"
 
-export {
-    getCanEditArticle
-} from './model/selectors/article'
+// export {
+//     getCanEditArticle
+// } from './model/selectors/article'

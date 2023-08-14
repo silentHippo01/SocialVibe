@@ -48,7 +48,7 @@ export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): w
         plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }),);
         plugins.push(new CircularDependencyPlugin({
             exclude: /node_modules/,
-            failOnError: false, //при обнаружении кольцевой зависимости будет появляться ошибка в консоли
+            failOnError: true, //при обнаружении кольцевой зависимости будет появляться ошибка в консоли
         }))
     }    
 

@@ -7,7 +7,6 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { FC, HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
-import { ArticlesPageFilters } from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from 'shared/const/localStorage';
 import { Page } from 'widgets/Page/Page';
 import { ArticleView } from '../../model/consts/consts';
@@ -21,7 +20,6 @@ interface ArticleListProps {
     onLoadNextPart?: () => void;
 }
 
-const Header = () => <ArticlesPageFilters />;
 
 // const getSkeletons = () => {
 //     return new Array(3)

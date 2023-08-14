@@ -1,4 +1,4 @@
-import AboutPage from "pages/AboutPage/ui/AboutPage"
+import { AboutPage } from "pages/AboutPage";
 import { AdminPanelPage } from "pages/AdminPanelPage";
 import { ArticleEditPage } from "pages/ArticleEditPage";
 import { ArticleDetailsPage } from "pages/ArticlesDetailsPage";
