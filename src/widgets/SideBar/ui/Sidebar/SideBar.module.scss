@@ -1,5 +1,5 @@
 .Sidebar {
-    height: calc(100vh  - var(--navbar-height)); //вся высота браузера - высоты навбара
+    height: calc(100vh - var(--navbar-height)); //вся высота браузера - высоты навбара
     width: var(--sidebar-width);
     background: var(--inverted-bg-color);
 
@@ -7,7 +7,7 @@
     transition: width 0.3s;
 }
 
-.switchers{
+.switchers {
     position: absolute;
     bottom: 20px;
     display: flex;
@@ -15,7 +15,7 @@
     width: 100%;
 }
 
-.lang{
+.lang {
     margin-left: 20px;
 }
 
@@ -23,10 +23,10 @@
     position: absolute;
     right: -32px;
     bottom: 40px;
-    z-index: 100000;
+    z-index: 10;
 }
 
-.items{
+.items {
     margin-top: 20px;
     margin-left: 30px;
 }
@@ -37,7 +37,7 @@
     align-items: center;
 }
 
-.link{
+.link {
     margin-top: 10px;
     opacity: 1;
 }
@@ -46,7 +46,7 @@
     fill: var(--inverted-primary-color);
 }
 
-.collapsed{
+.collapsed {
     width: var(--sidebar-width-collapsed);
 
     .switchers {
@@ -54,11 +54,11 @@
         align-items: center;
     }
 
-    .lang{
+    .lang {
         margin-left: 0;
     }
 
-    .link{
+    .link {
         width: 0;
         opacity: 0;
         transition: 0.2s opacity;
