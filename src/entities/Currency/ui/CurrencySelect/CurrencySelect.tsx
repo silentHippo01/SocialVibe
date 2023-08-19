@@ -4,7 +4,7 @@ import cls from './CurrencySelect.module.scss'
 import { useTranslation } from "react-i18next";
 import { Currency } from "../../model/types/Currency";
 import { memo, useCallback } from "react";
-import { ListBox } from "shared/ui/ListBox/ListBox";
+import { ListBox } from "shared/ui/Popup/ui/ListBox/ListBox";
 
 interface CurrencySelectProps {
     className?: string;

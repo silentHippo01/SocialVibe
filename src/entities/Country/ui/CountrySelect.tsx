@@ -4,7 +4,7 @@ import Select from 'shared/ui/Select/Select';
 import cls from './CountrySelect.module.scss';
 import { Country } from '../model/types/Country';
 import { t } from 'i18next';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popup/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
     className?: string;

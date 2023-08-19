@@ -23,7 +23,7 @@ root.render(
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
-            </ErrorBoundary>ы
+            </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,
 );
