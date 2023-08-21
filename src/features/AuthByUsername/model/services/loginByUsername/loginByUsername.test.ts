@@ -1,5 +1,5 @@
 import { TestAsyncThunk } from './../../../../../shared/lib/tests/TestAsyncThunk.ts/TestAsyncThunk';
-import { userActions } from 'entities/User';
+import { userActions } from '@/entities/User';
 import { StateSchema } from './../../../../../app/providers/StoreProvider/config/StateSchema';
 import { loginByUsername } from './loginByUsername';
 import axios from 'axios';

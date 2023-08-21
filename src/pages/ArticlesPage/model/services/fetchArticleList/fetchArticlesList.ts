@@ -1,8 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { Article, ArticleType } from "entities/Article";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { Article, ArticleType } from "@/entities/Article";
 import { getArticlesPageLimit, getArticlesPageNum, getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType } from "../../selectors/ArticlePageSelectors";
-import { addQueryParams } from "shared/lib/url/addQueryParams/addQueryParams";
+import { addQueryParams } from "@/shared/lib/url/addQueryParams/addQueryParams";
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk

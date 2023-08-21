@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { Article } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { FC, HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
-import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from 'shared/const/localStorage';
-import { Page } from 'widgets/Page/Page';
+import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from '@/shared/const/localStorage';
+import { Page } from '@/widgets/Page/Page';
 import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleListProps {

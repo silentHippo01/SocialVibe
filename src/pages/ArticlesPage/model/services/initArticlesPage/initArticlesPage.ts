@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
 import { getArticlesPageInited } from "../../selectors/ArticlePageSelectors";
 import { ArticlesPageActions } from '../../slices/ArticlesPageSlice';
 import { fetchArticlesList } from '../fetchArticleList/fetchArticlesList';
-import { ArticleSortField, ArticleType } from "entities/Article";
-import { SortOrder } from "shared/types";
+import { ArticleSortField, ArticleType } from "@/entities/Article";
+import { SortOrder } from "@/shared/types";
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk

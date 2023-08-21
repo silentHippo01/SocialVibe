@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { Article } from "entities/Article";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { Article } from "@/entities/Article";
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk

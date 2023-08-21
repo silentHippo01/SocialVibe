@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { Article } from "entities/Article";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { Article } from "@/entities/Article";
 import { getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPageLimit, getArticlesPageNum } from "../../selectors/ArticlePageSelectors";
 import { fetchArticlesList } from '../fetchArticleList/fetchArticlesList';
 import { ArticlesPageActions } from '../../slices/ArticlesPageSlice';

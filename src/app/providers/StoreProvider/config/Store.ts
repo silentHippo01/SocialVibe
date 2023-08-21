@@ -1,12 +1,12 @@
-import { counterReducer } from 'entities/Counter/model/slice/counterSlice';
+import { counterReducer } from '@/entities/Counter/model/slice/counterSlice';
 import { StateSchema } from './StateSchema';
 import { CombinedState, configureStore, getDefaultMiddleware, Reducer, ReducersMapObject } from '@reduxjs/toolkit'
-import { userReducer } from 'entities/User';
+import { userReducer } from '@/entities/User';
 import { createReducerManager } from './reducerManager';
-import { $api } from 'shared/api/api';
+import { $api } from '@/shared/api/api';
 import { NavigateOptions, To } from 'react-router-dom';
-import { ScrollSaveReducer } from 'features/ScrollSave';
-import { rktApi } from 'shared/api/rtkApi';
+import { ScrollSaveReducer } from '@/features/ScrollSave';
+import { rktApi } from '@/shared/api/rtkApi';
 
 export function createReduxStore(
     initialState?: StateSchema, 

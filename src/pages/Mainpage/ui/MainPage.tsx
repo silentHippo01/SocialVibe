@@ -1,10 +1,10 @@
-import { Counter } from 'entities/Counter';
+import { Counter } from '@/entities/Counter';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Dropdown } from 'shared/ui/Popup/ui/Dropdown/Dropdown';
-import { Input } from 'shared/ui/Input/Input';
-import { ListBox } from 'shared/ui/Popup/ui/ListBox/ListBox';
-import { Page } from 'widgets/Page/Page';
+import { Dropdown } from '@/shared/ui/Popup/ui/Dropdown/Dropdown';
+import { Input } from '@/shared/ui/Input/Input';
+import { ListBox } from '@/shared/ui/Popup/ui/ListBox/ListBox';
+import { Page } from '@/widgets/Page/Page';
 
 const MainPage = () => {
   const { t } = useTranslation('mainPage');

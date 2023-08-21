@@ -4,7 +4,7 @@ export {
 
 export {
     VStack
-} from 'shared/ui/Stack/VStack/VStack';
+} from '@/shared/ui/Stack/VStack/VStack';
 
 export {
     HStack

@@ -1,9 +1,9 @@
-import { ArticleList } from "entities/Article";
+import { ArticleList } from "@/entities/Article";
 import { getArticlesPageError, getArticlesPageIsLoading, getArticlesPageView } from "../../model/selectors/ArticlePageSelectors";
 import { getArticles } from "../../model/slices/ArticlesPageSlice";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { Text } from "shared/ui/Text/Text";
+import { Text } from "@/shared/ui/Text/Text";
 
 interface ArticleInfiniteListProps {
     classname?: string;

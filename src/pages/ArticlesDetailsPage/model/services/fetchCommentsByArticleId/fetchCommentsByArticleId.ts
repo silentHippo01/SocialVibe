@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ThunkConfig } from "app/providers/StoreProvider";
-import { IComment } from "entities/Comment";
+import { ThunkConfig } from "@/app/providers/StoreProvider";
+import { IComment } from "@/entities/Comment";
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk
