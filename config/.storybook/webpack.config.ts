@@ -3,7 +3,7 @@ import path from 'path';
 import { buildCssLoader } from './../build/loaders/buildCssLoader';
 import { BuildPaths } from './../build/types/config';
 
-export default ({ config }: {config: webpack.Configuration | undefined}) => {
+export default ({ config }: { config: webpack.Configuration | undefined }) => {
     const paths: BuildPaths = {
         build: '',
         html: '',
@@ -15,14 +15,18 @@ export default ({ config }: {config: webpack.Configuration | undefined}) => {
     // config.resolve.modules.push(paths.src);
     config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('.ts', '.tsx');
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    }
 
     // eslint-disable-next-line no-param-reassign
-    if(config?.module?.rules){
+    if (config?.module?.rules) {
         config!.module!.rules = config!.module!.rules?.map((rule: webpack.RuleSetRule | "...") => {
             if (rule !== "..." && /svg/.test(rule?.test as string)) {
                 return { ...rule, exclude: /\.svg$/i };
             }
-    
+
             return rule;
         });
     }
