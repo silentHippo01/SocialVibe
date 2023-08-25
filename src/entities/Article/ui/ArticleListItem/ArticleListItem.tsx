@@ -10,7 +10,7 @@ import Avatar from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from "@/shared/const/router";
 import AppLink from '@/shared/ui/AppLink/AppLink';
 import { HTMLAttributeAnchorTarget } from 'react';
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from '@/shared/const/localStorage';
@@ -19,7 +19,7 @@ import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 interface ArticleListItemProps {
     className?: string;
     article: Article;
-    view: ArticleView; 
+    view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     index?: number;
 }
@@ -66,11 +66,11 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                         <ArticleTextBlockComponent block={textBlock} className={cls.textblock} />
                     )}
                     <div className={cls.footer}>
-                        <AppLink 
+                        <AppLink
                             to={RoutePath.article_details + article.id}
                             target={target}
                         >
-                            <Button 
+                            <Button
                                 theme={ButtonTheme.OUTLINE}
                                 onClick={handleButtonClick}
                             >
@@ -85,9 +85,9 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink 
-            to={RoutePath.article_details + article.id} 
-            {...bindHover} 
+        <AppLink
+            to={RoutePath.article_details + article.id}
+            {...bindHover}
             className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
             target={target}
         >

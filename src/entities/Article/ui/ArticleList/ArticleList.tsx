@@ -8,7 +8,7 @@ import { Text, TextSize } from '@/shared/ui/Text/Text';
 import { FC, HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from '@/shared/const/localStorage';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page/ui/Page/Page';
 import { ArticleView } from '../../model/consts/consts';
 
 interface ArticleListProps {
@@ -33,7 +33,7 @@ const getSkeletons = (view: ArticleView) => {
     return new Array(view === ArticleView.SMALL ? 9 : 3)
         .fill(0)
         .map((item, index) => (
-            <ArticleListItemSkeleton className={cls.card} key={index} view={view}/>
+            <ArticleListItemSkeleton className={cls.card} key={index} view={view} />
         ))
 }
 
@@ -42,7 +42,7 @@ export const ArticleList = (props: ArticleListProps) => {
 
     const {
         className,
-        articles, 
+        articles,
         isLoading,
         view = ArticleView.SMALL,
         target,
@@ -60,9 +60,9 @@ export const ArticleList = (props: ArticleListProps) => {
 
     useEffect(() => {
         let timeoutId: NodeJS.Timeout;
-        if(view === 'SMALL'){
+        if (view === 'SMALL') {
             timeoutId = setTimeout(() => {
-                if(VirtuosoGridRef.current){
+                if (VirtuosoGridRef.current) {
                     VirtuosoGridRef.current.scrollToIndex(selectedArticleId);
                 }
             }, 100)
@@ -83,8 +83,8 @@ export const ArticleList = (props: ArticleListProps) => {
     // );
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem 
-            article={article}  
+        <ArticleListItem
+            article={article}
             view={view}
             className={cls.card}
             key={article.id}
@@ -103,18 +103,18 @@ export const ArticleList = (props: ArticleListProps) => {
     //     return null;
     // })
 
-    if(!isLoading && !articles.length){
+    if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                <Text size={TextSize.L} title={t('Статьи не найдены')}/>
+                <Text size={TextSize.L} title={t('Статьи не найдены')} />
             </div>
         )
     }
 
-    const ItemContainerComp: FC<{height: number, width: number; index: number}> = ({height, width, index}) => {
+    const ItemContainerComp: FC<{ height: number, width: number; index: number }> = ({ height, width, index }) => {
         return (
             <div className={cls.ItemContainer}>
-                <ArticleListItemSkeleton key={index} view={view} className={cls.card}/> 
+                <ArticleListItemSkeleton key={index} view={view} className={cls.card} />
             </div>
         )
     }

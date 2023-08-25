@@ -5,7 +5,7 @@ import { memo, useCallback } from "react";
 import { DynamicModuleLoader, ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { ArticlesPageReducer } from "../../model/slices/ArticlesPageSlice";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { Page } from "@/widgets/Page/Page";
+import { Page } from "@/widgets/Page/ui/Page/Page";
 import { fetchNextArticlesPage } from "../../model/services/fetchNextArticlesPage/fetchNextArticlesPage";
 import { initArticlesPage } from "../../model/services/initArticlesPage/initArticlesPage";
 import { ArticlesPageFilters } from "../ArticlesPageFilters/ArticlesPageFilters";
@@ -53,7 +53,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
             >
                 <ArticlesPageFilters />
-                <ArticleInfiniteList classname={cls.list}/>
+                <ArticleInfiniteList classname={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );

@@ -3,7 +3,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
+import { RoutePath } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 import { getArticleDetailsData } from "@/entities/Article";
@@ -31,14 +31,14 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [])}>
-            <Button 
-                theme={ButtonTheme.OUTLINE} 
+            <Button
+                theme={ButtonTheme.OUTLINE}
                 onClick={onBackToList}
             >
                 {t('Назад к списку статей')}
             </Button>
-            {canEdit && (<Button 
-                theme={ButtonTheme.OUTLINE} 
+            {canEdit && (<Button
+                theme={ButtonTheme.OUTLINE}
                 onClick={onArticleEdit}
             >
                 {t('Редактировать')}

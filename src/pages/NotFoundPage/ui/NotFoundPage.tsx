@@ -3,7 +3,7 @@ import { FC, ReactNode } from 'react';
 import { t } from 'i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './NotFoundPage.module.scss';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page/ui/Page/Page';
 
 interface NotFoundPageProps {
     className?: string;

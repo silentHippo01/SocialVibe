@@ -49,13 +49,13 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <main
-            ref={wrapperRef} 
+            ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
             onScroll={onScroll}
         >
             {children}
             {onScrollEnd ? <div ref={triggerRef} className={cls.trigger}></div> : null}
-        {/* div, доходя до которого вызывается колбек */}
+            {/* div, доходя до которого вызывается колбек */}
         </main>
     );
-}) ;
+});

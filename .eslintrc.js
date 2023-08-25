@@ -69,7 +69,14 @@ module.exports = {
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
-    'custom-plugin-eslint-for-project/path-checker': 'error',
+    'custom-plugin-eslint-for-project/path-checker': ['error', {alias: '@'}],
+    'custom-plugin-eslint-for-project/public-api-imports': [
+      'error', 
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
   },
   globals: {
     __IS_DEV__: true,

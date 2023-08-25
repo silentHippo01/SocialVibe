@@ -4,7 +4,7 @@ import { Input } from '@/shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getAddCommentFormError, getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors';
+import { getAddCommentFormError, getAddCommentFormText } from '@/features/addCommentForm/model/selectors/addCommentFormSelectors';
 import { useCallback } from 'react';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/addCommentFormSlice';
@@ -37,7 +37,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
     }, [dispatch])
 
     const onSendHandler = useCallback(() => {
-        onSendComment(text  || '');
+        onSendComment(text || '');
         onCommentTextChange('');
     }, [onCommentTextChange, onSendComment, text]);
 
