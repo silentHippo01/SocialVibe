@@ -70,6 +70,13 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'arrow-body-style': 'off',
     'custom-plugin-eslint-for-project/path-checker': ['error', {alias: '@'}],
+    'custom-plugin-eslint-for-project/path-checker': [
+      'error', 
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      }
+    ],
     'custom-plugin-eslint-for-project/public-api-imports': [
       'error', 
       {

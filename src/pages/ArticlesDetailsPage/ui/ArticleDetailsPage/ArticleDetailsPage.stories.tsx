@@ -1,22 +1,18 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import  ArticleDetailsPage from './ArticleDetailsPage';
-import { Theme } from '@/app/providers/ThemeProvider';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Article } from '@/entities/Article';
-import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/consts';
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-  title: 'pages/ArticleDetailsPage',
-  component: ArticleDetailsPage,
-  argTypes: {
-    backgroundColor: {control: 'color'},
-  },
-  args: {
-    to: '/',
-  }
+    title: 'pages/ArticleDetailsPage',
+    component: ArticleDetailsPage,
+    argTypes: {
+        backgroundColor: { control: 'color' },
+    },
+    args: {
+        to: '/',
+    }
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args}/>;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
 const article = {
     id: "1",
@@ -97,5 +93,5 @@ const article = {
 
 export const Normal = Template.bind({});
 Normal.args = {
-    
+
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Loader } from './Loader';
-import { Theme } from '@/app/providers/ThemeProvider';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from '@/shared/const/Theme';
 
 export default {
   title: 'widget/Loader',
@@ -15,7 +15,7 @@ export default {
   }
 } as ComponentMeta<typeof Loader>;
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args}/>;
+const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

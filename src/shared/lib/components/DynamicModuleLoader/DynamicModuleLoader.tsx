@@ -1,5 +1,5 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
 import { FC, ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
@@ -16,7 +16,7 @@ interface DynamicModuleLoaderProps {
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     const {
         reducers,
-        removeAfterUnmount = true, 
+        removeAfterUnmount = true,
         children,
     } = props;
 
@@ -28,11 +28,11 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
         //Object.entries когда достает ключи у объектов по умолчании принимает их строковыми 
         Object.entries(reducers).forEach(([name, reducer]) => {
             const mounted = mountedReducers[name as StateSchemaKey];
-            if(!mounted){
+            if (!mounted) {
                 store.reducerManager.add(name as StateSchemaKey, reducer); // при монтировании добавляем
                 dispatch({ type: `@INIT ${name} reducer` });
             }
-           
+
         })
 
         return () => {
