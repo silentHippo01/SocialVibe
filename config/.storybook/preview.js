@@ -2,7 +2,7 @@ import {StyleDecorator} from '../../src/shared/config/storybook/StyleDecorator/S
 import {ThemeDecorator} from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import {RouterDecorator} from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { addDecorator } from '@storybook/react';
-import { Theme } from '../../src/app/providers/ThemeProvider';
+import { Theme } from '../../src/shared/const/Theme';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator'
 
 export const parameters = {
@@ -13,6 +13,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  layout: 'fullscreen', 
 };
 
 addDecorator(StyleDecorator);

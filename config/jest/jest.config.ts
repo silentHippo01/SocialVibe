@@ -16,7 +16,7 @@ export default {
   coveragePathIgnorePatterns: [
     "\\\\node_modules\\\\"
   ],
-  
+
   moduleDirectories: [
     "node_modules"
   ],
@@ -33,6 +33,7 @@ export default {
   moduleNameMapper: {
     '\\.(scss)$': 'identity-obj-proxy',
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   "reporters": [
