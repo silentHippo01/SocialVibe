@@ -4,7 +4,7 @@ import cls from './ArticleList.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton';
-import { Text, TextSize } from '@/shared/ui/Text/Text';
+import { Text, TextSize } from '@/shared/ui/Text';
 import { FC, HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react';
 import { Virtuoso, VirtuosoGrid, VirtuosoGridHandle } from 'react-virtuoso';
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_ID } from '@/shared/const/localStorage';

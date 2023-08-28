@@ -1,8 +1,8 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './AddCommentForm.module.scss';
-import { Input } from '@/shared/ui/Input/Input';
+import { Input } from '@/shared/ui/Input';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useSelector } from 'react-redux';
 import { getAddCommentFormError, getAddCommentFormText } from '@/features/addCommentForm/model/selectors/addCommentFormSelectors';
 import { useCallback } from 'react';

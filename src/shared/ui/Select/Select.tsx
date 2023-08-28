@@ -16,7 +16,7 @@ interface SelectProps<T extends string> {
     readonly?: boolean;
 }
 
-const Select = <T extends string>(props: SelectProps<T>) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
 
     const {
         className,
@@ -28,14 +28,14 @@ const Select = <T extends string>(props: SelectProps<T>) => {
     } = props;
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-       if(onChange){
-        onChange(e.target.value as T);
-       }
+        if (onChange) {
+            onChange(e.target.value as T);
+        }
     }
 
     const optionsList = useMemo(() => {
         return options?.map(opt => (
-            <option 
+            <option
                 className={cls.option}
                 value={opt.value}
                 key={opt.value}
@@ -68,4 +68,4 @@ const Select = <T extends string>(props: SelectProps<T>) => {
     );
 };
 
-export default Select;
+// export default Select;

@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import AppLink, { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { AppLinkTheme, AppLink } from '@/shared/ui/AppLink';
 import cls from './SidebarItem.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +17,7 @@ const SidebarItem: FC<SidebarItemProps> = memo(({ item, collapsed }) => {
     const { t } = useTranslation();
     const isAuth = useSelector(getUserAuthData);
 
-    if(item.authOnly && !isAuth){
+    if (item.authOnly && !isAuth) {
         return null;
     }
 

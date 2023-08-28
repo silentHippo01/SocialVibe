@@ -1,18 +1,18 @@
 import { FC, memo, useCallback, useState } from 'react';
 import cls from "./NavBar.module.scss";
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { useSelector } from 'react-redux';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
-import AppLink, { AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
+import { Text, TextTheme } from '@/shared/ui/Text';
+import { AppLinkTheme, AppLink } from '@/shared/ui/AppLink';
 import { RoutePath } from "@/shared/const/router";
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/notificationButton';
 import { AvatarDropdown } from '@/features/avatarDropdown';
-import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Drawer } from '@/shared/ui/Drawer';
 import { NotificationList } from '@/entities/Notification';
 
 interface NavBarProps {

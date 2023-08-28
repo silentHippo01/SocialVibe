@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { RoutePath } from "@/shared/const/router";
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 
 interface AvatarDropdownProps {
     className?: string;

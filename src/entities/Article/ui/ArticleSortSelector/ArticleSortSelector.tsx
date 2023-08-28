@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import cls from './ArticleSortSelector.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Select, { SelectOption } from '@/shared/ui/Select/Select';
+import { SelectOption, Select } from '@/shared/ui/Select';
 import { useCallback, useMemo } from 'react';
 import { SortOrder } from '@/shared/types';
 import { ArticleSortField } from './../../model/consts/consts';
@@ -44,22 +44,22 @@ export const ArticleSortSelector = (props: ArticleSortSelectorProps) => {
             content: t('названию')
         },
         {
-            value: ArticleSortField.VIEWS,  
+            value: ArticleSortField.VIEWS,
             content: t('просмотрам')
         }
     ], [t])
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [])}>
-            <Select 
-                onChange={onChangeSort} 
-                options={sortFieldOptions} 
+            <Select
+                onChange={onChangeSort}
+                options={sortFieldOptions}
                 label={t('Сортировать по')}
                 value={sort}
-            /> 
-            <Select 
-                onChange={onChangeOrder} 
-                options={orderOptions} 
+            />
+            <Select
+                onChange={onChangeOrder}
+                options={orderOptions}
                 label={t('По')}
                 value={order}
                 className={cls.order}

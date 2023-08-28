@@ -1,10 +1,7 @@
-import React, { useCallback } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import Select from '@/shared/ui/Select/Select';
-import cls from './CountrySelect.module.scss';
+import { useCallback } from 'react';
 import { Country } from '../model/types/Country';
 import { t } from 'i18next';
-import { ListBox } from '@/shared/ui/Popup/ui/ListBox/ListBox';
+import { ListBox } from '@/shared/ui/Popup';
 
 interface CountrySelectProps {
     className?: string;
@@ -36,7 +33,7 @@ export const CountrySelect = (props: CountrySelectProps) => {
     }, [onChange])
 
     return (
-        <ListBox 
+        <ListBox
             onChange={onChangeHandler}
             items={options}
             value={value}

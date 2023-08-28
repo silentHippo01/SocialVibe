@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { useSelector } from 'react-redux';
-import { TextTheme, Text } from '@/shared/ui/Text/Text';
+import { TextTheme, Text } from '@/shared/ui/Text';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';

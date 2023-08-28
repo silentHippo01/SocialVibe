@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Avatar from './Avatar';
+import { Avatar } from './Avatar';
 // import AvatarIMG from './StorybookPepe.jpg';
 import AvatarIMG from './techik.jpg';
 
@@ -18,18 +18,18 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const PepeM = Template.bind({});
 PepeM.args = {
-    src: AvatarIMG,
-    size: 150,
+  src: AvatarIMG,
+  size: 150,
 };
 
 export const PepeL = Template.bind({});
 PepeL.args = {
-    src: AvatarIMG,
-    size: 250,
+  src: AvatarIMG,
+  size: 250,
 };
 
 export const PepeXL = Template.bind({});
 PepeXL.args = {
-    src: AvatarIMG,
-    size: 350,
+  src: AvatarIMG,
+  size: 350,
 };

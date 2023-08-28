@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import AppLink, { AppLinkTheme } from './AppLink';
+import { AppLinkTheme, AppLink } from './AppLink';
 
 export default {
   title: 'widget/AppLink.tsx',

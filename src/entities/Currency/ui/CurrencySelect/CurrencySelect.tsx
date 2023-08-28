@@ -1,10 +1,7 @@
-import { classNames } from "@/shared/lib/classNames/classNames";
-import Select from "@/shared/ui/Select/Select";
-import cls from './CurrencySelect.module.scss'
 import { useTranslation } from "react-i18next";
 import { Currency } from "../../model/types/Currency";
 import { memo, useCallback } from "react";
-import { ListBox } from "@/shared/ui/Popup/ui/ListBox/ListBox";
+import { ListBox } from "@/shared/ui/Popup";
 
 interface CurrencySelectProps {
     className?: string;
@@ -34,7 +31,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
     }, [onChange])
 
     return (
-        <ListBox 
+        <ListBox
             className={className}
             value={value}
             items={options}
