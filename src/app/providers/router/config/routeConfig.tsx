@@ -6,66 +6,75 @@ import { ArticlesPage } from "@/pages/ArticlesPage";
 import MainPage from "@/pages/Mainpage/ui/MainPage"
 import { NotFoundPage } from "@/pages/NotFoundPage"
 import { ProfilePage } from "@/pages/ProfilePage"
-import { RouteProps } from "react-router-dom";
 import { UserRole } from '@/entities/User'
 import { ForbiddenPage } from "@/pages/ForbiddenPage";
-import { AppRouters, RoutePath } from "@/shared/const/router";
+import {
+    AppRouters,
+    getRouteAbout,
+    getRouteAdminPanel,
+    getRouteArticleCreate,
+    getRouteArticleDetails,
+    getRouteArticleEdit,
+    getRouteArticles,
+    getRouteForbidden,
+    getRouteMain,
+    getRouteProfile
+} from "@/shared/const/router";
 import { AppRoutesProps } from "@/shared/types/router";
 
 export const routeConfig: Record<AppRouters, AppRoutesProps> = {
     [AppRouters.MAIN]: {
-        path: RoutePath.main,
+        path: getRouteMain(),
         element: <MainPage />
     },
     [AppRouters.ABOUT]: {
-        path: RoutePath.about,
+        path: getRouteAbout(),
         element: <AboutPage />
     },
-
     [AppRouters.PROFILE]: {
-        path: `${RoutePath.profile}:id`,
+        path: getRouteProfile(':id'),
         element: <ProfilePage />,
         authOnly: true,
     },
 
     [AppRouters.ARTICLES]: {
-        path: RoutePath.articles,
+        path: getRouteArticles(),
         element: <ArticlesPage />,
         authOnly: true,
     },
 
     [AppRouters.ARTICLE_DETAILS]: {
-        path: `${RoutePath.article_details}:id`,
+        path: getRouteArticleDetails(':id'),
         element: <ArticleDetailsPage />,
         authOnly: true,
     },
 
     [AppRouters.ARTICLE_EDIT]: {
-        path: `${RoutePath.article_edit}`,
+        path: getRouteArticleEdit(':id'),
         element: <ArticleEditPage />,
         authOnly: true,
     },
 
     [AppRouters.ARTICLE_CREATE]: {
-        path: `${RoutePath.article_create}`,
+        path: getRouteArticleCreate(),
         element: <ArticleEditPage />,
         authOnly: true,
     },
 
     [AppRouters.ADMIN_PANEL]: {
-        path: `${RoutePath.admin_panel}`,
+        path: getRouteAdminPanel(),
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
 
     [AppRouters.FORBIDDEN]: {
-        path: `${RoutePath.forbidden}`,
+        path: getRouteForbidden(),
         element: <ForbiddenPage />,
     },
 
     [AppRouters.NOT_FOUND_PAGE]: {
-        path: RoutePath.not_found_page,
+        path: "*",
         element: <NotFoundPage />
     },
 }

@@ -1,6 +1,6 @@
 export {
     ArticleDetailsPageAsync as ArticleDetailsPage
-}  from "./ui/ArticleDetailsPage/ArticleDetailsPage.async";
+} from "./ui/ArticleDetailsPage/ArticleDetailsPage.async";
 
 export type {
     ArticleDetailsCommentsSchema
@@ -13,6 +13,7 @@ export type {
 export type {
     ArticleDetailsPageSchema
 } from "./model/types/index"
+
 
 // export {
 //     getCanEditArticle

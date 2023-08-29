@@ -3,18 +3,14 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "@/shared/const/router";
+import { getRouteArticleEdit, getRouteArticles } from "@/shared/const/router";
 import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 import { getArticleDetailsData } from "@/entities/Article";
 import { getCanEditArticle } from "../../model/selectors/article";
 import { HStack } from "@/shared/ui/Stack";
 
-interface ArticleDetailsPageHeaderProps {
-
-}
-
-export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const userData = useSelector(getUserAuthData);
@@ -22,12 +18,14 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
     const canEdit = useSelector(getCanEditArticle);
 
     const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
+        navigate(getRouteArticles());
     }, [navigate]);
 
     const onArticleEdit = useCallback(() => {
-        navigate(`${RoutePath.article_details}${article?.id}/edit`);
-    }, [navigate, article?.id]);
+        if (article) {
+            navigate(getRouteArticleEdit(article?.id));
+        }
+    }, [navigate, article]);
 
     return (
         <HStack max justify={'between'} className={classNames('', {}, [])}>
