@@ -1,7 +1,7 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './ArticlesPageFilters.module.scss';
 import { useTranslation } from 'react-i18next';
-import { ArticleSortField, ArticleSortSelector, ArticleTypeTabs, ArticleView, ArticleViewSelector } from '@/entities/Article';
+import { ArticleSortField, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticlesPageActions } from '../../model/slices/ArticlesPageSlice';
 import { useCallback, useMemo } from 'react';
@@ -12,10 +12,12 @@ import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types';
 import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { ArticleType } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 
-interface ArticlesPageFiltersProps{
+interface ArticlesPageFiltersProps {
     className?: string;
 }
 
@@ -33,7 +35,7 @@ export const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
     const type = useSelector(getArticlesPageType);
 
     const fetchData = useCallback(() => {
-        dispatch(fetchArticlesList({replace: true}))
+        dispatch(fetchArticlesList({ replace: true }))
     }, [dispatch])
 
     const debouncedFetchData = useDebounce(fetchData, 500);
@@ -65,11 +67,11 @@ export const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
         dispatch(ArticlesPageActions.setPage(1));
         fetchData();
     }, [dispatch, debouncedFetchData]);
-    
+
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>
             <div className={cls.sortWrapper}>
-                <ArticleSortSelector 
+                <ArticleSortSelector
                     sort={sort}
                     order={order}
                     onChangeOrder={onChangeOrder}
@@ -78,13 +80,13 @@ export const ArticlesPageFilters = (props: ArticlesPageFiltersProps) => {
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
             </div>
             <Card className={cls.search}>
-                <Input 
+                <Input
                     placeholder={t('Поиск')}
                     value={search}
                     onChange={onChangeSearch}
                 />
             </Card>
-            <ArticleTypeTabs 
+            <ArticleTypeTabs
                 value={type}
                 onChangeType={onChangeType}
                 className={cls.tabs}

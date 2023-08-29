@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article } from '../../model/types/article';
-import { ArticleList } from '../ArticleList/ArticleList';
 import { ArticleView } from '@/entities/Article/model/consts/consts';
+import { Article, ArticleList } from '@/entities/Article';
 
 export default {
     title: 'entities/Article/ArticleList',
@@ -101,8 +100,8 @@ ListSmall.args = {
             ...article,
             id: String(index),
         })),
-        isLoading: false,
-        view: ArticleView.SMALL,
+    isLoading: false,
+    view: ArticleView.SMALL,
 };
 
 export const ListBig = Template.bind({});
@@ -113,8 +112,8 @@ ListBig.args = {
             ...article,
             id: String(index),
         })),
-        isLoading: false,
-        view: ArticleView.BIG,
+    isLoading: false,
+    view: ArticleView.BIG,
 };
 
 

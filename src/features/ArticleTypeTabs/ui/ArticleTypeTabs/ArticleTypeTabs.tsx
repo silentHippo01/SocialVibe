@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TabItem, Tabs } from '@/shared/ui/Tabs';
-import { ArticleType } from '../../model/consts/consts';
 import { useCallback, useMemo } from 'react';
+import { ArticleType } from '@/entities/Article';
 
 interface ArticleTypeTabsProps {
     className?: string;
@@ -15,11 +15,11 @@ export const ArticleTypeTabs = (props: ArticleTypeTabsProps) => {
     const { t } = useTranslation();
     const {
         className,
-        value, 
+        value,
         onChangeType
     } = props;
 
-    
+
     const typeTabs = useMemo<TabItem[]>(() => [
         {
             value: ArticleType.ALL,
@@ -44,12 +44,12 @@ export const ArticleTypeTabs = (props: ArticleTypeTabsProps) => {
     }, [])
 
     return (
-        <Tabs 
-            className={classNames("", {}, [className])} 
+        <Tabs
+            className={classNames("", {}, [className])}
             tabs={typeTabs}
             value={value}
             onTabClick={onTabClick}
         />
-         
+
     );
 };
