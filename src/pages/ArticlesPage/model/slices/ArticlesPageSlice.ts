@@ -11,7 +11,7 @@ import { ArticlePageSchema } from '../types/ArticlePageSchema';
 import { fetchArticlesList } from '../services/fetchArticleList/fetchArticlesList';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 
 
 const articlesAdapter = createEntityAdapter<Article>({
@@ -76,7 +76,7 @@ const ArticlesPageSlice = createSlice({
         state.isLoading = true;
         state.error = undefined;
 
-        if(action.meta.arg.replace){
+        if (action.meta.arg.replace) {
           articlesAdapter.removeAll(state);
         }
       })
@@ -87,11 +87,11 @@ const ArticlesPageSlice = createSlice({
       ) => {
         state.isLoading = false;
         //возможно ли такое?
-        if(state.limit){
+        if (state.limit) {
           state.hasMore = action.payload.length >= state.limit;
         }
 
-        if(action.meta.arg.replace){
+        if (action.meta.arg.replace) {
           articlesAdapter.setAll(state, action.payload);
         } else {
           articlesAdapter.addMany(state, action.payload); //новые данные добавляются в конец

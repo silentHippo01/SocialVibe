@@ -4,7 +4,7 @@ import { getArticlesPageInited } from "../../selectors/ArticlePageSelectors";
 import { ArticlesPageActions } from '../../slices/ArticlesPageSlice';
 import { fetchArticlesList } from '../fetchArticleList/fetchArticlesList';
 import { ArticleSortField, ArticleType } from "@/entities/Article";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 
 //дженерики createAsyncThunk: 1 - то что возвращаем, 2 - то что принимаем 
 //fetchProfileData - создает асинхронный thunk
@@ -12,7 +12,7 @@ import { SortOrder } from "@/shared/types";
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
     'articlesPage/initArticlesPage',
     async (searchParams, thunkAPI) => {
-        const {extra, rejectWithValue, getState, dispatch} = thunkAPI;
+        const { extra, rejectWithValue, getState, dispatch } = thunkAPI;
         const inited = getArticlesPageInited(getState());
 
         if (!inited) {
@@ -21,22 +21,22 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
             const searchFromUrl = searchParams.get('search');
             const typeFromUrl = searchParams.get('type') as ArticleType;
 
-            if(orderFromUrl){
+            if (orderFromUrl) {
                 dispatch(ArticlesPageActions.setOrder(orderFromUrl))
             }
 
-            if(sortFromUrl){
+            if (sortFromUrl) {
                 dispatch(ArticlesPageActions.setSort(sortFromUrl))
             }
 
-            if(searchFromUrl){
+            if (searchFromUrl) {
                 dispatch(ArticlesPageActions.setSearch(searchFromUrl))
             }
 
-            if(typeFromUrl){
+            if (typeFromUrl) {
                 dispatch(ArticlesPageActions.setType(typeFromUrl))
             }
-            
+
             dispatch(ArticlesPageActions.initState())
             dispatch(fetchArticlesList({}));
         }

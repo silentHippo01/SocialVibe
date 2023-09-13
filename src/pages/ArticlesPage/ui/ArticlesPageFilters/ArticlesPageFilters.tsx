@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { getArticlesPageOrder, getArticlesPageSearch, getArticlesPageSort, getArticlesPageType, getArticlesPageView } from './../../model/selectors/ArticlePageSelectors';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { fetchArticlesList } from '../../model/services/fetchArticleList/fetchArticlesList';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { ArticleType } from '@/entities/Article';

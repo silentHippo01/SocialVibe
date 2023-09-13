@@ -3,7 +3,7 @@ import cls from './ArticleSortSelector.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { SelectOption, Select } from '@/shared/ui/Select';
 import { useCallback, useMemo } from 'react';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { ArticleSortField } from '@/entities/Article';
 
 interface ArticleSortSelectorProps {
