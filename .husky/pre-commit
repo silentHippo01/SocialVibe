@@ -3,6 +3,7 @@
 
 # npm run build:prod
 # npm run lint:ts
+# npx lint-staged
 # npm run lint:scss
 # npm run test:unit
 # npm run storybook:build
