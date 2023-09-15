@@ -598,6 +598,15 @@
         "MANAGER"
       ],
       "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNub7qo587oj4Faxp9W94VoUXJGrQO7_xLfA&usqp=CAU"
     }
   ],
   "profile": [

@@ -15,7 +15,7 @@
       },
       "esModuleInterop": true,
       "allowSyntheticDefaultImports": true,
-      "isolatedModules": true,
+      "isolatedModules": false,
     },
     "ts-node": {
         "compilerOptions": {
